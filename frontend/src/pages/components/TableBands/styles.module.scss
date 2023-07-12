@@ -1,0 +1,62 @@
+@use '../../../styles/sass/index.module.scss' as v;
+.tbleBand {
+    padding: 20px;
+    justify-self: center;
+    & table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: v.$baselineheight;
+        border-collapse: collapse;
+        border-spacing: 0;
+        background-color: v.$tablebackground;
+
+        th,
+        td {
+            padding: 8px;
+            vertical-align: top;
+            border-top: v.$tableborderwidth v.$tableborderstyle v.$tableborder;
+            font-size: v.fs(small);
+            line-height: v.$baselineheight;
+            text-align: left;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        thead th {
+            vertical-align: bottom;
+        }
+
+        colgroup + thead tr:first-child th,
+        colgroup + thead tr:first-child td,
+        thead:first-child tr:first-child th,
+        thead:first-child tr:first-child td {
+            border-top: 0;
+        }
+
+        tbody + tbody {
+            border-top: v.$tableborderwidth * 2 v.$tableborderstyle v.$tableborder;
+        }
+
+        tbody tr td,
+        tbody tr th {
+            @include v.transition(background-color 0.25s linear 0s);
+        }
+
+        tbody tr:hover td,
+        tbody tr:hover th {
+            background-color: v.$tablehover;
+        }
+    }
+}
+
+.bandName {
+    width: 100%;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    padding: .55rem 0.67rem;
+    font-size: 14px;
+}

@@ -1,0 +1,11 @@
+.alert {
+    width: 50%;
+    height: 150px;
+    & > p > .success {
+        color: green;
+    }
+
+    & > p > .danger {
+        color: red;
+    }
+}

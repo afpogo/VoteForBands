@@ -1,0 +1,9 @@
+.formBands {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    & > form {
+        width: min-content;
+    }
+}
